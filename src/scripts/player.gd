@@ -7,9 +7,15 @@ var jumping = false
 var last_floor = true
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 const GRAVITY_MULTIPLIER = 1.5
-func _init() -> void:
-	#$AnimationTree.start()
-	pass
+var last_direction = Vector2(0, 0)
+
+func _process(delta: float) -> void:
+	if is_player_walking(): # hack because i js cannot figure this out with the animationtree
+		$SpriteWalk.visible = true
+		$SpriteIdle.visible = false
+	else:
+		$SpriteWalk.visible = false
+		$SpriteIdle.visible = true
 func update_sprite(direction: Vector3) -> void:
 	#if direction.x != 0 and direction.y != 0 and direction.z != 0:
 	#print(direction)
@@ -42,7 +48,6 @@ func update_sprite(direction: Vector3) -> void:
 		$Sprite.play("walk_up")
 		return
 func get_direction_vector():
-	print("dir vec")
 	return Input.get_vector("left", "right", "forward", "backward")
 func get_move_input(delta):
 	#var vy = velocity.y
@@ -97,8 +102,23 @@ func _physics_process(delta: float) -> void:
 	
 	if position.y <= -10: ## dont fall out of the world dumbass
 		get_tree().reload_current_scene()
-	$AnimationTree.set("parameters/Walk/blend_position", get_direction_vector().normalized())
-	print("%d, %d" % [velocity.x, velocity.z])
+	var ndv = get_direction_vector().normalized()
+	if ndv.x != 0 or ndv.y != 0:
+		print("setting last dir %d %d" % [ndv.x, ndv.y])
+		last_direction = Vector2(ndv.x, ndv.y) # make sure we're not passing by reference here
+	$AnimationTree.set("parameters/Walk_SM/walk_blend/blend_position", ndv)
+	$AnimationTree.set("parameters/Idle_SM/idle_blend/blend_position", last_direction) # TODO: the illusion breaks if you adjust the camera
+	
+	#print("%d, %d" % [velocity.x, velocity.z])
+	"""print("main playback: " + $AnimationTree.get("parameters/playback").get_current_node())
+	print("walk_sm playback: " + $AnimationTree.get("parameters/Walk_SM/playback").get_current_node())
+	print("blend_sm playback: " + $AnimationTree.get("parameters/Idle_SM/playback").get_current_node())
+	print("velocity state: %s, dv= %d %d, last_dir = %d %d" % [str(!!velocity), ndv.x, ndv.y, last_direction.x, last_direction.y])"""
+	
+
+func is_player_walking() -> bool:
+	var vec = get_direction_vector().normalized()
+	return vec.x != 0 or vec.y != 0
 
 func _on_sprite_animation_finished() -> void:
 	#$Sprite.stop()
