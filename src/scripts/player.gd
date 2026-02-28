@@ -104,7 +104,7 @@ func _physics_process(delta: float) -> void:
 		get_tree().reload_current_scene()
 	var ndv = get_direction_vector().normalized()
 	if ndv.x != 0 or ndv.y != 0:
-		print("setting last dir %d %d" % [ndv.x, ndv.y])
+		#print("setting last dir %d %d" % [ndv.x, ndv.y])
 		last_direction = Vector2(ndv.x, ndv.y) # make sure we're not passing by reference here
 	$AnimationTree.set("parameters/Walk_SM/walk_blend/blend_position", ndv)
 	$AnimationTree.set("parameters/Idle_SM/idle_blend/blend_position", last_direction) # TODO: the illusion breaks if you adjust the camera
