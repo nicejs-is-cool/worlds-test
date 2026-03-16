@@ -87,6 +87,7 @@ func _physics_process(delta: float) -> void:
 	#velocity.y += -gravity * delta
 	if WorldsTest.currentPlayState == WorldsTest.PlayState.UI:
 		# FIXME: since the button to jump and open dialogue is one and the same this kinda causes the player to stop midair while on the dialogue since we don't process physics in there
+		# this should also be moved to a separate function to avoid duplicating code
 		if not is_on_floor():
 			velocity.y += -gravity * delta * GRAVITY_MULTIPLIER
 		move_and_slide()
