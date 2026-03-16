@@ -10,6 +10,7 @@ const GRAVITY_MULTIPLIER = 1.5
 var last_direction = Vector2(0, 0)
 
 func _process(delta: float) -> void:
+	
 	if is_player_walking(): # hack because i js cannot figure this out with the animationtree
 		$SpriteWalk.visible = true
 		$SpriteIdle.visible = false

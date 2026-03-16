@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://1puwxi8nm07"]
+
+[ext_resource type="Script" uid="uid://cytwbvtyxv1mi" path="res://src/scripts/dialogue.gd" id="1_ogyii"]
+[ext_resource type="Texture2D" uid="uid://1fk6kf0ud2x8" path="res://src/assets/Noibat-Normal-nobg.png" id="2_3jqjm"]
+[ext_resource type="Theme" uid="uid://l21a7hgw8abe" path="res://src/assets/font_theme.tres" id="2_ogyii"]
+[ext_resource type="Texture2D" uid="uid://d1kg3etmcfbv1" path="res://src/assets/dialogue-bg-200p.png" id="3_3jqjm"]
+
+[node name="Dialogue" type="Control" unique_id=420901324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -448.0
+offset_bottom = -424.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ogyii")
+
+[node name="Portrait" type="TextureRect" parent="." unique_id=968043666]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_right = 152.0
+offset_bottom = 128.0
+texture = ExtResource("2_3jqjm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1140461500]
+texture_filter = 1
+layout_mode = 0
+offset_top = 120.0
+offset_right = 704.0
+offset_bottom = 224.0
+texture = ExtResource("3_3jqjm")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 20
+patch_margin_top = 17
+patch_margin_right = 20
+patch_margin_bottom = 17
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=533396067]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 672.0
+offset_bottom = 208.0
+theme = ExtResource("2_ogyii")
+bbcode_enabled = true
+scroll_active = false
+scroll_following_visible_characters = true
+visible_characters_behavior = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=539780155]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

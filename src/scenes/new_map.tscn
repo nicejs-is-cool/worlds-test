@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://h0ofjwap60ig"]
 
 [ext_resource type="MeshLibrary" uid="uid://e6ds6vhdfysp" path="res://src/assets/maintiles.tres" id="1_cpdsr"]
+[ext_resource type="Script" uid="uid://f770pbscll4v" path="res://src/scripts/new_map.gd" id="1_f3wsf"]
 [ext_resource type="PackedScene" uid="uid://63g777irew16" path="res://src/scenes/player.tscn" id="2_vqic3"]
 [ext_resource type="Script" uid="uid://by7hucfjepqt1" path="res://src/scripts/camera.gd" id="3_2bdhb"]
 [ext_resource type="PackedScene" uid="uid://vwrr7d0k0djx" path="res://src/scenes/hud.tscn" id="4_whyo8"]
 [ext_resource type="Theme" uid="uid://l21a7hgw8abe" path="res://src/assets/font_theme.tres" id="5_gbjbi"]
 
 [node name="NewMap" type="Node" unique_id=351599421]
+script = ExtResource("1_f3wsf")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1053485801]
 mesh_library = ExtResource("1_cpdsr")
@@ -31,3 +33,11 @@ shadow_blur = 0.0
 
 [node name="HUD" parent="." unique_id=1630500089 instance=ExtResource("4_whyo8")]
 theme = ExtResource("5_gbjbi")
+
+[node name="DialogueContainer" type="Control" parent="." unique_id=1534735078]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 240.0
+offset_top = 392.0
+offset_right = 944.0
+offset_bottom = 624.0
