@@ -19,6 +19,14 @@ run/main_scene="uid://h0ofjwap60ig"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://src/assets/icon.svg"
 
+[autoload]
+
+WorldsTest="*uid://c004k6ybguer8"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/MagicaVoxel_Importer_with_Extensions/plugin.cfg")

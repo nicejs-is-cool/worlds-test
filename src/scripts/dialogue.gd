@@ -7,6 +7,7 @@ func _ready() -> void:
 	pass
 
 func dismiss() -> void:
+	WorldsTest.currentPlayState = WorldsTest.PlayState.Game
 	queue_free()
 
 func show_text(text: String, animTime: float) -> void:
@@ -26,7 +27,7 @@ func show_text(text: String, animTime: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("button_1"):
+	if Input.is_action_just_pressed("button_1") and WorldsTest.currentPlayState == WorldsTest.PlayState.UI:
 		dismiss()
 
 

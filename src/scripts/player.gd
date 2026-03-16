@@ -85,9 +85,16 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()"""
 	#$AnimationPlayer.play("walk_north")
 	#velocity.y += -gravity * delta
+	if WorldsTest.currentPlayState == WorldsTest.PlayState.UI:
+		# FIXME: since the button to jump and open dialogue is one and the same this kinda causes the player to stop midair while on the dialogue since we don't process physics in there
+		if not is_on_floor():
+			velocity.y += -gravity * delta * GRAVITY_MULTIPLIER
+		move_and_slide()
+		return
 	get_move_input(delta)
 	if not is_on_floor():
 		velocity.y += -gravity * delta * GRAVITY_MULTIPLIER
+	
 	if Input.is_action_just_pressed("button_1") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumping = true
@@ -118,6 +125,8 @@ func _physics_process(delta: float) -> void:
 	
 
 func is_player_walking() -> bool:
+	if WorldsTest.currentPlayState != WorldsTest.PlayState.Game:
+		return false
 	var vec = get_direction_vector().normalized()
 	return vec.x != 0 or vec.y != 0
 
