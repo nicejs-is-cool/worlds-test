@@ -1,6 +1,9 @@
 extends Node
 # stores globals and shi
 
+# not sure if this is a good idea since they aren't gonna be used *all* the time, but it's better than it being on a class_name ig?
+const PMDC_Portrait = preload("res://src/scripts/resources/portrait.gd")
+
 enum PlayState {
 	UI,
 	Game
@@ -14,5 +17,5 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
