@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="TestRes" format=3 uid="uid://hdapp44fvgrh"]
+
+[ext_resource type="Script" uid="uid://bpefrmw1a5tjl" path="res://src/scripts/resources/portrait.gd" id="1_7ud5j"]
+
+[resource]
+script = ExtResource("1_7ud5j")
