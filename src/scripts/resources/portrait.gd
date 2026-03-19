@@ -1,5 +1,5 @@
 extends Resource
-class_name PMDCollab_Portrait
+class_name PMDC_Portrait
 
 ## Name of the emotion/portrait as seen on the PMDCollab Sprite Repository.
 @export var emotion: String = "Normal"
