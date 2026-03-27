@@ -23,6 +23,7 @@ config/icon="res://src/assets/icon.svg"
 [autoload]
 
 WorldsTest="*uid://c004k6ybguer8"
+SceneTransition="*uid://bheiw6l636s1f"
 
 [debug]
 

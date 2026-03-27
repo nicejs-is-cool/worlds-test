@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 
 func _on_new_game_button_pressed() -> void: # TODO: Scene transition manager
-	WorldsTest.currentPlayState = WorldsTest.PlayState.Game
-	get_tree().change_scene_to_file("res://src/scenes/new_map.tscn")
+	WorldsTest.setPlayState(WorldsTest.PlayState.Game)
+	SceneTransition.change_scene_to("res://src/scenes/new_map.tscn")
