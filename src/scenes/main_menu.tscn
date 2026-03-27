@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://be1h3fl7arb7a"]
+
+[ext_resource type="Theme" uid="uid://l21a7hgw8abe" path="res://src/assets/font_theme.tres" id="1_rm437"]
+[ext_resource type="Script" uid="uid://cejtn5kpekabv" path="res://src/scenes/main_menu.gd" id="2_mob6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mob6k"]
+font_size = 128
+
+[node name="MainMenu" type="Control" unique_id=357124402]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rm437")
+script = ExtResource("2_mob6k")
+
+[node name="Title" type="Label" parent="." unique_id=981434055]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 83.0
+offset_right = 742.0
+offset_bottom = 187.0
+text = "worlds-test"
+label_settings = SubResource("LabelSettings_mob6k")
+
+[node name="New Game Button" type="Button" parent="." unique_id=73923803]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 281.0
+offset_right = 642.0
+offset_bottom = 337.0
+text = "New Game"
+
+[node name="Version" type="Label" parent="." unique_id=2069616031]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 40.0
+grow_vertical = 0
+text = "v0.0.0"
+
+[connection signal="pressed" from="New Game Button" to="." method="_on_new_game_button_pressed"]

@@ -9,7 +9,7 @@ enum PlayState {
 	Game
 }
 
-@export var currentPlayState: PlayState = PlayState.Game
+@export var currentPlayState: PlayState = PlayState.UI
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
