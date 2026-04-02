@@ -876,6 +876,7 @@ shape = SubResource("CapsuleShape3D_yl0g7")
 [node name="SpriteWalk" type="Sprite3D" parent="." unique_id=1185760567]
 visible = false
 billboard = 1
+shaded = true
 texture_filter = 0
 texture = ExtResource("1_ssxk1")
 hframes = 6
@@ -894,6 +895,7 @@ parameters/Walk_SM/walk_blend/blend_position = Vector2(0, 0)
 
 [node name="SpriteIdle" type="Sprite3D" parent="." unique_id=2028740715]
 billboard = 1
+shaded = true
 texture_filter = 0
 texture = ExtResource("3_hwyk6")
 hframes = 7
