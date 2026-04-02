@@ -7,6 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://vwrr7d0k0djx" path="res://src/scenes/hud.tscn" id="4_whyo8"]
 [ext_resource type="Theme" uid="uid://l21a7hgw8abe" path="res://src/assets/font_theme.tres" id="5_gbjbi"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gbjbi"]
+
+[sub_resource type="Sky" id="Sky_gbjbi"]
+sky_material = SubResource("ProceduralSkyMaterial_gbjbi")
+
+[sub_resource type="Environment" id="Environment_knk8u"]
+background_mode = 2
+sky = SubResource("Sky_gbjbi")
+glow_enabled = true
+glow_bloom = 0.29
+
 [node name="NewMap" type="Node" unique_id=351599421]
 script = ExtResource("1_f3wsf")
 
@@ -41,3 +52,6 @@ offset_left = 240.0
 offset_top = 392.0
 offset_right = 944.0
 offset_bottom = 624.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=356377665]
+environment = SubResource("Environment_knk8u")

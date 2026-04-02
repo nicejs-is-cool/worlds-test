@@ -9,4 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$FPS.text = "FPS: %s" % Engine.get_frames_per_second()
-	$Info.text = "worlds_test (%s)" % Engine.get_architecture_name()
+	$Info.text = "worlds_test (%s) on %s" % [Engine.get_architecture_name(), DisplayServer.get_name()]
