@@ -110,7 +110,8 @@ func _physics_process(delta: float) -> void:
 		$Pivot.rotation += Vector3(0,45,0)
 	
 	if position.y <= -10: ## dont fall out of the world dumbass
-		get_tree().reload_current_scene()
+		#get_tree().reload_current_scene()
+		SceneTransition.reload_current_scene()
 	var ndv = get_direction_vector().normalized()
 	if ndv.x != 0 or ndv.y != 0:
 		#print("setting last dir %d %d" % [ndv.x, ndv.y])
