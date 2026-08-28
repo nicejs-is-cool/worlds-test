@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://d2v8p34tbvnw1"]
+
+[ext_resource type="Script" uid="uid://henslovdu3wn" path="res://src/scripts/resources/GroundChara.gd" id="1_7fnf8"]
+
+[resource]
+script = ExtResource("1_7fnf8")

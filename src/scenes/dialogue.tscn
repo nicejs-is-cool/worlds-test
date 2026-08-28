@@ -16,20 +16,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ogyii")
 
-[node name="Portrait" type="TextureRect" parent="." unique_id=968043666]
-texture_filter = 1
-layout_mode = 0
-offset_left = 24.0
-offset_right = 152.0
-offset_bottom = 128.0
-texture = ExtResource("2_3jqjm")
-
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1140461500]
 texture_filter = 1
 layout_mode = 0
 offset_top = 120.0
 offset_right = 704.0
 offset_bottom = 224.0
+pivot_offset = Vector2(-72, -80)
 texture = ExtResource("3_3jqjm")
 region_rect = Rect2(0, 0, 128, 128)
 patch_margin_left = 20
@@ -50,5 +43,68 @@ scroll_following_visible_characters = true
 visible_characters_behavior = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=539780155]
+
+[node name="PortraitRect" type="NinePatchRect" parent="." unique_id=111338358]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 136.0
+offset_bottom = 126.0
+pivot_offset = Vector2(-72, -80)
+texture = ExtResource("3_3jqjm")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 20
+patch_margin_top = 17
+patch_margin_right = 20
+patch_margin_bottom = 17
+
+[node name="Portrait" type="TextureRect" parent="PortraitRect" unique_id=968043666]
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3jqjm")
+
+[node name="NameRect" type="NinePatchRect" parent="." unique_id=1731831132]
+texture_filter = 1
+layout_mode = 0
+offset_left = 144.0
+offset_top = 64.0
+offset_right = 256.0
+offset_bottom = 112.0
+pivot_offset = Vector2(-72, -80)
+texture = ExtResource("3_3jqjm")
+region_rect = Rect2(0, 0, 128, 128)
+patch_margin_left = 20
+patch_margin_top = 17
+patch_margin_right = 20
+patch_margin_bottom = 17
+
+[node name="Label" type="Label" parent="NameRect" unique_id=1343954858]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -13.0
+offset_right = 28.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ogyii")
+text = "Noibat"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

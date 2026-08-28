@@ -55,3 +55,10 @@ offset_bottom = 624.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=356377665]
 environment = SubResource("Environment_knk8u")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=958815964]
+transform = Transform3D(0.64454824, 0.7441493, 0.17549752, -0.10827702, -0.13838267, 0.9844422, 0.75685775, -0.6535228, -0.008620036, 1.2603722, 7.8393655, 3.998836)
+light_color = Color(0.11090847, 0.4629587, 0.6886399, 1)
+light_energy = 5.0
+spot_range = 3.665
+spot_angle = 34.8956
